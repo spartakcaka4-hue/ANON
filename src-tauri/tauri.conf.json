@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ANON",
+  "version": "0.1.0",
+  "identifier": "app.anon.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "ANON Alpha 0.1.0",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 900,
+        "minHeight": 620,
+        "decorations": true,
+        "resizable": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost https://www.youtube.com; img-src 'self' data: https://i.ytimg.com https://yt3.ggpht.com https://yt3.googleusercontent.com; script-src 'self' https://www.youtube.com; style-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "ANON contributors",
+    "copyright": "Copyright © 2026 ANON contributors",
+    "category": "Video",
+    "shortDescription": "Privacy-focused Windows YouTube client",
+    "longDescription": "ANON Alpha is a local-first Windows client for YouTube search, channel browsing, and official privacy-enhanced playback without an ANON account or ANON telemetry.",
+    "icon": ["icons/icon.ico", "icons/icon.png"],
+    "windows": {
+      "allowDowngrades": false,
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "installMode": "currentUser",
+        "languages": ["English"],
+        "displayLanguageSelector": false,
+        "compression": "lzma"
+      }
+    }
+  }
+}

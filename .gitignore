@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Frontend/build output
+dist/
+coverage/
+.vite/
+.cache/
+*.tsbuildinfo
+
+# Rust/Tauri build output
+target/
+src-tauri/target/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local/private application data
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+youtube-api-key.bin
+
+# Test/e2e output
+playwright-report/
+test-results/
+test-results.xml
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# IDE/editor files
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Tauri icon-generator output not used by the Windows-only package
+src-tauri/icons/android/
+src-tauri/icons/ios/
+src-tauri/icons/icon.icns
